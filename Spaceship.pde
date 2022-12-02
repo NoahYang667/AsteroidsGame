@@ -1,4 +1,4 @@
-class Spaceship extends Floater {   
+class Spaceship extends Floater {  
   public Spaceship() {
     corners = 3;
     xCorners = new int[]{-8, 16, -8};
@@ -15,30 +15,13 @@ class Spaceship extends Floater {
     myPointDirection = (Math.random() * 360);
     myCenterX = (Math.random() * 400);
     myCenterY = (Math.random() * 400);
-    
-  }
-  
-  public void show() {
-    fill(myColor);
    
-    //translate the (x,y) center of the ship to the correct position
-    translate((float)myCenterX, (float)myCenterY);
-
-    //convert degrees to radians for rotate()     
-    float dRadians = (float)(myPointDirection*(Math.PI/180));
-    
-    //rotate so that the polygon will be drawn in the correct direction
-    rotate(dRadians);
-    
-    //draw the polygon
-    triangle(xCorners[0] + (float)myXspeed, yCorners[0]+ (float)myYspeed, xCorners[1] + (float)myXspeed, yCorners[1]+ (float)myYspeed, xCorners[2]+ (float)myXspeed, yCorners[2]+ (float)myYspeed);
-
-    //"unrotate" and "untranslate" in reverse order
-    rotate(-1*dRadians);
-    translate(-1*(float)myCenterX, -1*(float)myCenterY);
-
-
-
-    
   }
+ public double getX(){
+  return myCenterX;
+}
+public double getY(){
+  return myCenterY;
+}
+ 
 }
